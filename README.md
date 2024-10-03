@@ -5,7 +5,6 @@
 각 페키지에서는 다음과 같은 내용을 다루고 있습니다.
 
 - basic_auth : 기본 인증/인가 구현
-- basic_auth_structure : 시큐리티의 내부 구조와 각 필터들의 동작 원리 작성
 - jwt_auth : jwt방식으로 인증을 진행 적용, jwt 발급, 인증 인가 구현
 - jwt_deepen : jwt 발급을 넘어 보안을 위한 여러가지 심화적인 구현
 - basic_oauth : OAuth2 소셜 로그인 구현
