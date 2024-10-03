@@ -1,0 +1,33 @@
+package com.mycom.springsecurity.basic_auth.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+// 인가
+// 특정한 경로에 요청이 오면 Controller 클래스에 도달하기 전 필터에서 Spring Security가 검증을 함
+// 1. 해당 경로의 접근은 누구에게 열려 있는지
+// 2. 로그인이 완료된 사용자인지
+// 3. 해당되는 role을 가지고 있는지
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    // 인가 설정을 진행하는 클래스
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        // 참고 사항 : 스프링 3.1.x 버전 부터 람다형식 표현 필수
+        http
+                .authorizeRequests((auth)-> auth
+                        .requestMatchers("/","login").permitAll()
+                        .requestMatchers("/admin").hasRole("ADMIN")
+                        .requestMatchers("/my/**").hasAnyRole("ADMIN","USER")
+                        .anyRequest().authenticated()
+                );
+
+        return http.build();
+    }
+}
