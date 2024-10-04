@@ -74,4 +74,27 @@ public class SpringSecurityConfig {
 
 3.1.X 버전 부터 람다형식 표현 필수
 
-## 
+## DB 연결
+데이터베이스의 경우 정말 민감한 정보이기 때문에 코드에서 분리하여 관리하였습니다.
+하지만 이곳은 로컬에서 계속해서 작업할 것이기 때문에 이번에는 `.env` 파일을 사용해서 관리하도록 하겠습니다.
+
+`dotenv`을 사용하면 설정을 `.env`에서 관리할 수 있습니다.
+
+```java
+implementation 'me.paulschwarz:spring-dotenv:4.0.0'
+```
+
+.env
+```etc
+DB_URL=jdbc:mariadb://DBURL적으세요:포트번호/DB명
+DB_USERNAME=이름
+DB_PASSWORD=비밀번호
+```
+
+.yml
+```
+  config:
+    import: optional:file:.env[.properties]
+```
+저는 application.properties 파일과 동일한 위치에 두었습니다. **위치를 바꾸고 싶다면?**  
+spring.config.import=optional:file:.env[.properties] 수정 -> ./.env 이부분의 경로를 수정하세요
