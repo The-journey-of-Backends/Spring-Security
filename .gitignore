@@ -1,4 +1,4 @@
-HELP.md
+../../../HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### Environment Variables ###
-src/main/resources/yml/env.yml
+*.env
