@@ -50,7 +50,7 @@ public class SecurityConfig {
 
         http
                 .formLogin((auth)-> auth.loginPage("/login")
-                        .loginProcessingUrl("/loginProcess")
+                        .loginProcessingUrl("/loginProc")
                         .permitAll()
                 );
 
