@@ -1,9 +1,6 @@
 package com.mycom.springsecurity.basic_auth.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +13,10 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // 이 컬럼 값이 오직 유니크 할 수 있도록
+    @Column(unique = true)
     private String username;
+
     private String password;
 
     private String role;
