@@ -37,7 +37,7 @@ public class SecurityConfig {
                         * authenticated : 로그인만 진행하면 모두 접근할 수 있는 것입니다.
                         * denyAll : 모든 사용자의 접근을 막는 메소드
                         * */
-                        .requestMatchers("/","login").permitAll()
+                        .requestMatchers("/","login","/loginProc","/join", "/joinProc").permitAll()
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .requestMatchers("/my/**").hasAnyRole("ADMIN","USER")
 
