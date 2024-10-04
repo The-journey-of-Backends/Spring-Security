@@ -6,10 +6,9 @@
 
 - basic_auth : 기본 인증/인가 구현
 - jwt_auth : jwt방식으로 인증을 진행 적용, jwt 발급, 인증 인가 구현
-- jwt_deepen : jwt 발급을 넘어 보안을 위한 여러가지 심화적인 구현
 - basic_oauth : OAuth2 소셜 로그인 구현
 - jwt_ouauth_session : 소셜 로그인인 인증후 세션을 생성하는 시큐리티 구현
-- jwt_ouauth_session : 소셜 로그인인 인증후 jwt를 발급하는 시큐리티 구현
+- jwt_ouauth_jwt : 소셜 로그인인 인증후 jwt를 발급하는 시큐리티 구현
 
 ## 시큐리티 버전별 특성
 스프링은 버전에 따라 구현 방식이 변경되는데 시큐리티의 경우 특히 세부 버전별로 구현 방법이 다르기 때문에 버전 마다 구현  
